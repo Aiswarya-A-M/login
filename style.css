@@ -1,6 +1,6 @@
 .backgroundImg {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-size: cover; 
     background-position: center; 
     display: flex;
@@ -9,13 +9,27 @@
     position: absolute;
     z-index: 1;
 }
-.upper{
+#login{
+    display:block;  
+}
+
+.sign{
+    height: 60%;
+    z-index: 2; 
+    font-weight: bold;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/logo.jpg");
+}
+/* .upper{
     position: relative;
     width: 100%;
     height: 20%;
     z-index: 2;
     background-color: rgb(207, 136, 29);
-}
+} */
 
 
 .signBtn{
@@ -28,21 +42,7 @@
     text-align: center;
     margin-bottom: 2%;
 }
-#login{
-    display:block;
-    height: 40%;  
-}
 
-.sign{
-    position: relative;
-    z-index: 2;
-    font-weight: bold;
-    width: 30%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-image: url("assets/logo.jpg");
-}
 #signup{
     height: 60%;
     display: none;
@@ -59,7 +59,7 @@
     width: 60%;
     height: 5%;
 }
-#moveToSignup{
+.moveToSignupin{
     text-decoration: underline;
     color: blue;
     background-color: rgb(245, 236, 225);
@@ -69,8 +69,9 @@
     text-align:left ;
 }
 .paragraph{
-    margin-top: 5%;
+    margin-top: 2%;
     width: 70%;
+    height:10%
 }
 #textdisplay{
     background-color: rgb(185, 121, 24);

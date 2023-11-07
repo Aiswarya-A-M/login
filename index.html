@@ -10,19 +10,16 @@
 <body>
     <div class="backgroundImg">
         <img  id="bg" class="backgroundImg" src="assets/backgroundImg.png" alt="have a nice day">
-        <div id="textdisplay">hi</div>
         <form id="login" class="sign" onsubmit="validateDetails(event)" >   
-             <!-- onsubmit="return validateLoginForm()" -->
             <h2>Sign-in</h2>
             <input type="text" id="existingusername" class="inputlogin"  placeholder="Email" required><br>
             <input id="existingPassword" class="inputlogin"  type="text" placeholder="Password" required><br><br>
-            <input type="submit" id="signinBtn" class="signBtn" value="Login" name="signinButton">
-            <div class="judt">
-               <span class="paragraph">Don't have an account?</span>
-               <span ><input id="moveToSignup" type="button" value="sign-up" onclick="signupForm()"></span>
-            </div>
+            <input type="submit" id="signinBtn" class="signBtn" value="Login" name="signinButton"><br>
+            <span class="paragraph">Don't have an account?</span>
+            <span ><input class="moveToSignupin" type="button" value="sign-in" onclick="signupForm()"></span>
+            
         </form>
-        <form class="sign" id="signup" onsubmit="return validateForm()">
+        <form class="sign" id="signup" onsubmit="return validateForm(event)">
             <h2>Sign-up</h2>
             <label>Name</label><br>
             <input type="text" id="username" class="inputField" required><br>
@@ -31,8 +28,11 @@
             <label>Mobile Number</label><br>
             <input id="phonenumber" class="inputField" type="number" minlength="10" required><br>
             <label>Password</label><br>
-            <input id="password" class="inputField" type="text" required><br><br>
-            <input type="submit" id="signBtn" class="signBtn" value="Sign-up" name="signupButton">
+            <input id="password" class="inputField" type="password" required><br><br>
+            <input type="submit" id="signBtn" class="signBtn" value="Sign-up" name="signupButton"><br>
+            <span class="paragraph">Already have an account?</span>
+            <span ><input class="moveToSignupin" type="button" value="sign-up" onclick="signinForm()"></span>
+            
         </form>
     </div>
 </body>

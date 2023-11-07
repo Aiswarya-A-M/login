@@ -1,127 +1,131 @@
-function validateForm(){
-    var username=document.getElementById("username").value;
-    var email=document.getElementById("email").value;
-    var phoneNumber=document.getElementById("phonenumber").value;
-    var password=document.getElementById("password").value;
-    console.log(username);
-    if (email.trim() === '' || !isValidEmail(email) ||!isNotExisting(email)) {
-        alert("Please enter a valid email address.");
-        return false;
-    }
-    if (!isValidPassword(password)) {
-        alert("Password should contain at least one special character,at least 8 characters, at least one uppercase letter and one numbers .");
-        return false;
-    }
-    if (!isValidPhoneNumber(phoneNumber)||!isNotExistingPhonenumber(phoneNumber)) {
-        console.log("not true")
-        return false;
-    }
-    addDetails();
-    return true;
-}
-
-function isValidEmail(email) {
-    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return emailPattern.test(email);
-}
-
-function isValidPassword(password) {
-    console.log("out")
-    console.log(password)
-    if (
-        /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(password) &&
-        /[A-Z]/.test(password) &&
-        /\d/.test(password)
-    ) {
-        console.log("inside")
-         return true;
-    } else {
-         return false;
-    }
-}
-
-function isValidPhoneNumber(phoneNumber) {
-    console.log(phoneNumber)
-    var phoneNumberPattern = /^\d{10,}$/;
-    return (phoneNumberPattern.test(phoneNumber));
-}
-
-function isNotExisting(email){
-    let  userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
-    const indexOfEmail=userDetails.findIndex(obj=>obj.email===email);
-    if (indexOfEmail===-1){
-        return true;
-    }else{
-        alert("the email is already exist");
-    }  
-}
-
-function isNotExistingPhonenumber(phoneNumber){
-    let  userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
-    const indexOfPhonenum=userDetails.findIndex(obj=>obj.phoneNumber===phoneNumber);
-    if (indexOfPhonenum===-1){
-        return true
-    }else{
-        alert("the phonenumber is already exist");
-    }  
-}
-
+let userDetails=JSON.parse(localStorage.getItem("userDetails"))||[];
 function signupForm(){
+
     document.getElementById("signup").style.display="block";
     document.getElementById("login").style.display="none";
 }
+function signinForm(){
+    document.getElementById("signup").style.display="none";
+    document.getElementById("login").style.display="block";
+}
+function validateForm(event){
+    event.preventDefault();
+    const username=document.getElementById("username").value;
+    const email=document.getElementById("email").value;
+    const phoneNumber=document.getElementById("phonenumber").value;
+    const password=document.getElementById("password").value;
+    if (!usernameValid(username)){
+        alert("Name should contain atleast 3 letters");
+        return false;
+    }
+    if (!emailValid(email) || !emailNotExist(email)){
+        alert("invalid email");
+        return false;
+    }
+    if (!passwordValid(password)){
+        alert("password should contain atlest 8characters including one uppercase,number and special character");
+        return false;
+    }
+    if(!phoneNumberValid(phoneNumber) ||!phonenumNotExist(phoneNumber) ){
+        alert("phone number should contain 10 numbers")
+        return false;
+    }
+    addDeatails(username,email,phoneNumber,password);
+    return true;
+}
 
 function validateDetails(event){
-    event. preventDefault()
-    let existingUserName=document.getElementById("existingusername").value;
-    //alert(existingUserName)
-    let existingPassword=document.getElementById("existingPassword").value;
-    let  userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
-    const userData=userDetails.filter(obj=>obj.email===existingUserName);
-    let x=JSON.stringify(userData[0].password)    
-        //alert(x);
-        if(userData[0].password===existingPassword){
-           document.getElementById("login").style.display="none";
-           dashBoard(userData[0].username);
-        }else{
-         alert('Password is incorrect');
-        }
+    event.preventDefault();
+    const existingusername=document.getElementById("existingusername").value;
+    const existingPassword=document.getElementById("existingPassword").value;
+    const userExist=userDetails.filter(obj=>obj.userEmail===existingusername);
+    if (userExist[0].userPassword === existingPassword){
+        const user=userExist[0].userName;
+        document.cookie="username:user"
+        window.location.href = "http://127.0.0.1:5500/dashboard.html";
+    }
+    else{
+        console.log("incorrect")
+    }
+}
+function usernameValid(username){
+    const usernamePattern=/^[a-zA-Z ]{3,30}$/;
+    console.log(username)
+    if(usernamePattern.test(username)){
+        console.log("ji")
+        return true;
+    }else{
+        return false;
+    }
+}
+function emailValid(email){
+    const emailPattern=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    console.log(email);
+    if(emailPattern.test(email)){
+        console.log("ji")
+        return true;
+    }else{
+        return false;
+    }
+}
+function passwordValid(password){
+    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(password) &&
+    /[A-Z]/.test(password) &&
+    /\d/.test(password)
+    ) {
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+function phoneNumberValid(phoneNumber){
+    const numberPattern= /^\d{10}$/;
+    if (numberPattern.test(phoneNumber)){
+        return true;
+    }else{
+        return false;
+    }
+}
+function emailNotExist(email){
+    const userExist=userDetails.findIndex(obj=>obj.userEmail===email)
+    if (userExist!==-1){
+        alert("email already exist")
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+function phonenumNotExist(phoneNumber){
+    const userExist=userDetails.findIndex(obj=>obj.userNumber===phoneNumber)
+    if (userExist!==-1){
+        alert("phonenumber already exist")
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
-function addDetails(){
-    alert("hi")
-    var username=document.getElementById("username").value;
-    var email=document.getElementById("email").value;
-    var phoneNumber=document.getElementById("phonenumber").value;
-    var password=document.getElementById("password").value;
-        alert("hlo")
-        let  userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
-        let id;
-        if (userDetails.length === 0) {
-          id = 1;
-        } else {
-          id = Math.max(...userDetails.map((userDetails) => userDetails.id)) + 1;
-        }
-        let newDetails = {
-            id: id,
-            username:username,
-            email: email,
-            phoneNumber: phoneNumber,
-            password: password,
-        };
-        userDetails.push(newDetails);
-        localStorage.setItem("userDetails", JSON.stringify(userDetails));
-        document.getElementById("login").style.display="block";
-        document.getElementById("signup").style.display="none";
-}
-
-function dashBoard(name){
-    // alert("at dashboard")
-    // alert(name);
-    console.log("name..inside",name)
-    document.getElementById("login").style.display="none";
-    document.getElementById("signup").style.display="none";
-    textdisplay.innerHtml= name;
-    console.log("name..",name)
-    
+function addDeatails(username,email,phoneNumber,password){
+    // let userDetails=JSON.parse(localStorage.getItem("userDetails"))||[];
+    let id;
+    if (userDetails.length===0){
+        id=1
+    }else{
+        id=userDetails[userDetails.length-1].id+1
+    }
+    newUser={
+        id:id,
+        userName:username,
+        userEmail:email,
+        userNumber:phoneNumber,
+        userPassword:password
+    }
+    userDetails.push(newUser);
+    localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    console.log(userDetails);
+    signinForm();
 }
