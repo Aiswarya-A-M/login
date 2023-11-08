@@ -1,3 +1,14 @@
+const cookieExist=document.cookie;
+const name1=cookieExist.split("=")
+console.log(name1.length);
+console.log(typeof(name1));
+if(name1.length===0){
+     console.log("hi")
+}
+else{
+    "http://127.0.0.1:5500/dashboard.html"
+}
+console.log(name1)
 let userDetails=JSON.parse(localStorage.getItem("userDetails"))||[];
 function signupForm(){
 
@@ -44,8 +55,9 @@ function validateDetails(event){
         const idString=userExist[0].id;
         const userNameid="userName"+idString;
         const cookieExist=document.cookie;
-        const name1=cookieExist.split("=")
-        document.cookie = name1[0] +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        console.log(cookieExist);
+        // const name1=cookieExist.split("=")
+        // document.cookie = name1[0] +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
         // const cookieExist=getCookie(userNameid);
         // if(cookieExist===null){
             setCookie(userNameid,user,1);
@@ -123,18 +135,16 @@ function phonenumNotExist(phoneNumber){
 }
 
 // function getCookie(userNameid){
-
 //     console.log("find my user",userNameid);
 //     const cookieExist=document.cookie;
 //     console.log("my cookie",cookieExist);
 //     const cookieArr=cookieExist.split(";");
-    
 //     console.log("my array of user",cookieArr);
 //     cookieArr.forEach(element=>{
-//         // console.log(element.indexOf(userNameid))
+//         console.log(element.indexOf(userNameid))
         
 //         // document.cookie = element[0] +'=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;';
-//         // const elementArr=element.split("=");
+//         const elementArr=element.split("=");
 //         // console.log("ele",elementArr);
 //         // for(let i=0;i<elementArr.length;i++){
 //         //     console.log("item",elementArr[0])
