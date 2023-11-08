@@ -9,19 +9,23 @@
     z-index: 1;
     display: flex;
 }
-#welcomeMsg{
-    z-index: 2;
-    position: relative;
-    text-align: center;
-    align-items: center;
-    font-size: 500%;
-}
-#nameOfUser{
-    z-index: 2;
-    position: relative; 
-    align-items:  left;
+@media only screen and (min-width: 600px){
+    #welcomeMsg{
+        z-index: 2;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        font-size: 500%;
+    }
+    #nameOfUser{
+        z-index: 2;
+        position: relative; 
+        align-items:  center;
+        font-size: 250%;
+    }
 
 }
+
 #logout{
     z-index: 2;
     position: relative; 

@@ -43,12 +43,14 @@ function validateDetails(event){
         const user=userExist[0].userName;
         const idString=userExist[0].id;
         const userNameid="userName"+idString;
-        const cookieExist=getCookie(userNameid);
-        if(cookieExist===null){
+        const cookieExist=document.cookie;
+        const name1=cookieExist.split("=")
+        document.cookie = name1[0] +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        // const cookieExist=getCookie(userNameid);
+        // if(cookieExist===null){
             setCookie(userNameid,user,1);
-        }
-        
-         window.location.href = "http://127.0.0.1:5500/dashboard.html";
+        // } 
+        window.location.href = "http://127.0.0.1:5500/dashboard.html";
         // console.log(todate);
         // const tomorrow = 
         // console.log("hi",tomorrow.toString())
@@ -120,30 +122,42 @@ function phonenumNotExist(phoneNumber){
     }
 }
 
-function getCookie(userNameid){
-    console.log(userNameid);
-    const cookieExist=document.cookie;
-    const cookieArr=cookieExist.split(";");
+// function getCookie(userNameid){
+
+//     console.log("find my user",userNameid);
+//     const cookieExist=document.cookie;
+//     console.log("my cookie",cookieExist);
+//     const cookieArr=cookieExist.split(";");
     
-    console.log(cookieArr);
-    cookieArr.forEach(element=>{
-        // console.log(element.indexOf(userNameid))
-        const elementArr=element.split("=");
-        console.log(elementArr[0]);
-        let index=0;
-        if (elementArr[0]===' '+userNameid){
-            console.log("find",userNameid);
-            index=1;
-        }
-        if (index===1){
-            console.log(index);
-            return 1;
-        }
-    })
-    console.log("not")
-    return null
-    //console.log(cookieArr.indexOf(userNameid));
-}
+//     console.log("my array of user",cookieArr);
+//     cookieArr.forEach(element=>{
+//         // console.log(element.indexOf(userNameid))
+        
+//         // document.cookie = element[0] +'=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;';
+//         // const elementArr=element.split("=");
+//         // console.log("ele",elementArr);
+//         // for(let i=0;i<elementArr.length;i++){
+//         //     console.log("item",elementArr[0])
+//         //     document.cookie = elementArr[0] +'=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;';
+//         // }
+//         // return null;
+        
+//         // console.log(elementArr[0]);
+//         // let index=0;
+//         // if (elementArr[0]===' '+userNameid){
+//         //     console.log("find",userNameid);
+            
+//         //     index=1;
+//         // }
+//         // if (index===1){
+//         //     console.log(index);
+//         //     return 1;
+//         // }
+//     })
+//     console.log("not")
+//     // return null
+//     //console.log(cookieArr.indexOf(userNameid));
+// }
 
 function setCookie(name,userNameid,dayslive){
     const todate=new Date();

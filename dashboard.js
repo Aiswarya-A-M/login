@@ -9,7 +9,6 @@ const name1=cookieExist.split("=")
 console.log(name1[1]);
 if (name1[1]===undefined){
     window.location.href = "http://127.0.0.1:5500/index.html";
-    
 }
 document.getElementById("nameOfUser").value=name1[1];
 function deleteItem(){
