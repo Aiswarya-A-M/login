@@ -14,13 +14,14 @@
         <form id="login" class="signin" onsubmit="validateDetails(event)" >   
             <h2>Sign-in</h2>
             <input type="text" id="existingusername" class="inputlogin"  placeholder="Email" required><br>
-            <input id="existingPassword" class="inputlogin"  type="text" placeholder="Password" required><br><br>
+            <input id="existingPassword" class="inputlogin"  type="password" placeholder="Password" required><br><br>
             <input type="submit" id="signinBtn" class="signBtn" value="Login" name="signinButton"><br>
             <span class="paragraph">Don't have an account?</span><br>
             <span ><input class="moveToSignupin" type="button" value="sign-in" onclick="signupForm()"></span>
             
         </form>
-        <div class="formdiv">
+        <!-- <div class="formdiv"> -->
+            <div class="bgform">
             <form class="sign" id="signup" onsubmit="return validateForm(event)">
                 <h2>Sign-up</h2>
                 <label>Name</label><br>
@@ -35,7 +36,7 @@
                 <span class="paragraph">Already have an account?</span>
                 <span ><input class="moveToSignupin" type="button" value="sign-up" onclick="signinForm()"></span>  
             </form>
-        </div>
+         </div>
     </div>
 </body>
 <script src="script.js"></script>

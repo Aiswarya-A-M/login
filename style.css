@@ -24,17 +24,17 @@
     background-image: url("assets/logo.jpg");
 }
 
-/* .sign{
+.sign{
     height: 90%;
     z-index: 2; 
     font-weight: bold;
-    width: 30%;
+    width:50%;
     text-align: center;
     justify-content: center;
     align-items: center;
     background-image: url("assets/logo.jpg");
-} */
-.formdiv{
+}
+/* .formdiv{
     height: 90%;
     z-index: 2; 
     font-weight: bold;
@@ -42,8 +42,9 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-image: url("assets/logo.jpg");
-}
+    /* background-image: url("assets/logo.jpg"); */
+    /* background-color: blue;
+}  */
 /* .upper{
     position: relative;
     width: 100%;

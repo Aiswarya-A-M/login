@@ -1,14 +1,5 @@
-// document.cookie="username:aiswarya;expires:"
-// const todate=new Date();
-// console.log(todate)
-// const time=todate.getDate()+1;
-// // const time=todate.getTime()
-// console.log(time)
 const cookieExist=document.cookie;
-console.log("my cookie",document.cookie)
 const cookieDeatails=cookieExist.split("=")
-console.log(cookieDeatails);
-console.log(cookieDeatails[1]);
 if (cookieDeatails[1]===undefined){
     window.location.href = "http://127.0.0.1:5500/index.html";
 }
