@@ -10,13 +10,12 @@ const crypt={
       }
 };
 const cookieExist=document.cookie;
-const name1=cookieExist.split("=")
-console.log("my lengt",name1.length);
-console.log(typeof(name1));
-if(name1.length===1){
-    
+const userCookieDeatail=cookieExist.split("=")
+console.log("my lengt",userCookieDeatail.length);
+console.log(typeof(userCookieDeatail));
+if(userCookieDeatail.length===1){
      console.log("hi")
-     console.log(name1)
+     console.log(userCookieDeatail)
     let userDetails=JSON.parse(localStorage.getItem("userDetails"))||[];
     function signupForm(){
 
