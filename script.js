@@ -9,7 +9,6 @@ const crypt={
         return decipher.toString(CryptoJS.enc.Utf8);
       }
 };
-
 const cookieExist=document.cookie;
 const userCookieDeatail=cookieExist.split("=")
 if(userCookieDeatail.length===1){
@@ -55,6 +54,7 @@ if(userCookieDeatail.length===1){
             return false;
         }
         addDeatails(username,email,phoneNumber,encriptedPassword);
+        document.getElementById("signup").reset();
         return true;
     }
 
@@ -68,8 +68,8 @@ if(userCookieDeatail.length===1){
             const user=userExist[0].userName;
             const idString=userExist[0].id;
             const userNameid="userName"+idString;
-            const cookieExist=document.cookie;
             setCookie(userNameid,user,1);
+            document.getElementById("login").reset();
             window.location.href = "http://127.0.0.1:5500/dashboard.html";   
         }
         else{
