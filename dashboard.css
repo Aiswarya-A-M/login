@@ -16,6 +16,12 @@
     align-items: center;
     font-size: 500%;
 }
+#nameOfUser{
+    z-index: 2;
+    position: relative; 
+    align-items:  left;
+
+}
 #logout{
     z-index: 2;
     position: relative; 

@@ -41,8 +41,19 @@ function validateDetails(event){
     const userExist=userDetails.filter(obj=>obj.userEmail===existingusername);
     if (userExist[0].userPassword === existingPassword){
         const user=userExist[0].userName;
-        document.cookie="username:user"
-        window.location.href = "http://127.0.0.1:5500/dashboard.html";
+        const idString=userExist[0].id;
+        const userNameid="userName"+idString;
+        const cookieExist=getCookie(userNameid);
+        if(cookieExist===null){
+            setCookie(userNameid,user,1);
+        }
+        
+         window.location.href = "http://127.0.0.1:5500/dashboard.html";
+        // console.log(todate);
+        // const tomorrow = 
+        // console.log("hi",tomorrow.toString())
+        // document.cookie=`username:${user}; expires:${tomorrow};path/`;
+        
     }
     else{
         console.log("incorrect")
@@ -107,6 +118,39 @@ function phonenumNotExist(phoneNumber){
     else {
         return true;
     }
+}
+
+function getCookie(userNameid){
+    console.log(userNameid);
+    const cookieExist=document.cookie;
+    const cookieArr=cookieExist.split(";");
+    
+    console.log(cookieArr);
+    cookieArr.forEach(element=>{
+        // console.log(element.indexOf(userNameid))
+        const elementArr=element.split("=");
+        console.log(elementArr[0]);
+        let index=0;
+        if (elementArr[0]===' '+userNameid){
+            console.log("find",userNameid);
+            index=1;
+        }
+        if (index===1){
+            console.log(index);
+            return 1;
+        }
+    })
+    console.log("not")
+    return null
+    //console.log(cookieArr.indexOf(userNameid));
+}
+
+function setCookie(name,userNameid,dayslive){
+    const todate=new Date();
+    todate.setTime(todate.getTime()+(dayslive*24*60*60*1000));
+    let expiryDate="expires="+todate.toUTCString();
+    document.cookie=`${name}=${userNameid};${expiryDate}; path/`
+    console.log(document.cookie);
 }
 
 function addDeatails(username,email,phoneNumber,password){
