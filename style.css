@@ -2,7 +2,7 @@
     width: 100%;
     height: 100%;
     background-size: cover; 
-    background-position: center; 
+    /* background-position: center;  */
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -14,31 +14,14 @@
 }
 
 .signin{
-    height: 60%;
+    height: 80%;
     z-index: 2; 
-    font-weight: bold;
-    width: 30%;
+    font-weight: small;
+    width: 50%;
     text-align: center;
     justify-content: center;
     align-items: center;
     background:transparent;
-}
-
-.sign{
-    height: 90%;
-    z-index: 2; 
-    font-weight: bold;
-    width:50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-}
-.bgform{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(13, 216, 216);
 }
 
 .signBtn{
@@ -52,39 +35,67 @@
     margin-bottom: 2%;
 }
 
-#signup{
-    height: 60%;
-    display: none;
-}
-.inputlogin{
-    align-items: center;
-    width: 50%;
-    height: 10%;
-    justify-content: center;
-    margin-top: 3%;
+.paragraph{
+    width: 10%;
+    height:5%;
+    font-weight: small;
 }
 
-.inputField{
-    width: 100%;
-    height: 20%;
-}
 .moveToSignupin{
     text-decoration: underline;
     color: blue;
     background-color: rgb(245, 236, 225);
     width:50%;
     border-color: antiquewhite;
-    margin-top: 5%;
-    text-align:center ;
-
-}
-.paragraph{
     margin-top: 2%;
-    width: 10%;
-    height:5%
+    text-align:center ;
+    height: 7%;
+    font-size: large;
 }
-#textdisplay{
-    background-color: rgb(185, 121, 24);
-    position: relative;
-    z-index: 2;
+
+.inputlogin{
+    align-items: center;
+    width: 80%;
+    height: 10%;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.sign{
+    height: 90%;
+    z-index: 2; 
+    font-weight: bold;
+    width:50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+.signupformdiv{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    width: 70%;
+}
+.signinformdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    width: 50%;
+}
+
+
+#signup{
+    height: 60%;
+    display: none;
+}
+
+
+.inputField{
+
+    width: 100%;
+    height: 20%;
+    
 }

@@ -9,6 +9,7 @@ const crypt={
         return decipher.toString(CryptoJS.enc.Utf8);
       }
 };
+
 const cookieExist=document.cookie;
 const userCookieDeatail=cookieExist.split("=")
 if(userCookieDeatail.length===1){
@@ -30,19 +31,27 @@ if(userCookieDeatail.length===1){
         const password=document.getElementById("password").value;
         let encriptedPassword = crypt.encrypt(password);
         if (!usernameValid(username)){
-            alert("Name should contain atleast 3 letters");
+            document.getElementById("username").style.borderColor="red";
+            alert("Name should contain atleast 3 letters and numbers are not allowed");
+            document.getElementById("username").style.borderColor="white";
             return false;
         }
         if (!emailValid(email) || !emailNotExist(email)){
+            document.getElementById("email").style.borderColor="red";
             alert("invalid email");
+            document.getElementById("email").style.borderColor="white";
             return false;
         }
         if (!passwordValid(password)){
+            document.getElementById("password").style.borderColor="red";
             alert("password should contain atlest 8characters including one uppercase,number and special character");
+            document.getElementById("password").style.borderColor="white";
             return false;
         }
         if(!phoneNumberValid(phoneNumber) ||!phonenumNotExist(phoneNumber) ){
-            alert("phone number should contain 10 numbers")
+            document.getElementById("phonenumber").style.borderColor="red";
+            alert("phone number should contain 10 numbers");
+            document.getElementById("phonenumber").style.borderColor="white";
             return false;
         }
         addDeatails(username,email,phoneNumber,encriptedPassword);

@@ -10,17 +10,18 @@
 </head>
 <body>
     <div class="backgroundImg">
-        <img  id="bg" class="backgroundImg" src="assets/backgroundImg.png" alt="have a nice day">
-        <form id="login" class="signin" onsubmit="validateDetails(event)" >   
-            <h2>Sign-in</h2>
-            <input type="text" id="existingusername" class="inputlogin"  placeholder="Email" required><br>
-            <input id="existingPassword" class="inputlogin"  type="password" placeholder="Password" required><br><br>
-            <input type="submit" id="signinBtn" class="signBtn" value="Login" name="signinButton"><br>
-            <span class="paragraph">Don't have an account?</span><br>
-            <span ><input class="moveToSignupin" type="button" value="sign-in" onclick="signupForm()"></span>
-            
-        </form>
-        <div class="bgform">
+        <img class="backgroundImg" src="assets/backgroundImg.png" alt="have a nice day">
+        <div class="signinformdiv"></div>
+            <form id="login" class="signin" onsubmit="validateDetails(event)" >   
+                <h2>Sign-in</h2>
+                <input type="text" id="existingusername" class="inputlogin"  placeholder="Email" required><br>
+                <input id="existingPassword" class="inputlogin"  type="text" placeholder="Password" required><br><br>
+                <input type="submit" class="signBtn" value="Login" name="signinButton"><br>
+                <span class="paragraph">Don't have an account?</span><br>
+                <span ><input class="moveToSignupin" type="button" value="sign-up" onclick="signupForm()"></span> 
+            </form>
+        </div>
+        <div class="signupformdiv">
             <form class="sign" id="signup" onsubmit="return validateForm(event)">
                 <h2>Sign-up</h2>
                 <label>Name</label><br>
@@ -30,10 +31,10 @@
                 <label>Mobile Number</label><br>
                 <input id="phonenumber" class="inputField" type="number" minlength="10" required><br>
                 <label>Password</label><br>
-                <input id="password" class="inputField" type="password" required><br><br>
+                <input id="password" class="inputField" type="text" required><br><br>
                 <input type="submit" id="signBtn" class="signBtn" value="Sign-up" name="signupButton"><br>
                 <span class="paragraph">Already have an account?</span>
-                <span ><input class="moveToSignupin" type="button" value="sign-up" onclick="signinForm()"></span>  
+                <span ><input class="moveToSignupin" type="button" value="sign-in" onclick="signinForm()"></span>  
             </form>
          </div>
     </div>
