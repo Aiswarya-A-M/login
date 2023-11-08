@@ -5,13 +5,15 @@
 // // const time=todate.getTime()
 // console.log(time)
 const cookieExist=document.cookie;
+console.log("my cookie",document.cookie)
 const name1=cookieExist.split("=")
+console.log(name1);
 console.log(name1[1]);
 if (name1[1]===undefined){
     window.location.href = "http://127.0.0.1:5500/index.html";
 }
 document.getElementById("nameOfUser").value=name1[1];
 function deleteItem(){
-    document.cookie = name1[0] +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    document.cookie = name1[0] +'=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;';
     window.location.href = "http://127.0.0.1:5500/index.html";
 }

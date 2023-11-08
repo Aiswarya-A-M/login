@@ -1,3 +1,14 @@
+const crypt={
+    secret:"CIPHERKEY",
+    encrypt : clear => {
+        const cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+        return cipher.toString();
+      },
+    decrypt : cipher => {
+        const decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
+        return decipher.toString(CryptoJS.enc.Utf8);
+      }
+};
 const cookieExist=document.cookie;
 const name1=cookieExist.split("=")
 console.log("my lengt",name1.length);
@@ -22,6 +33,8 @@ if(name1.length===1){
         const email=document.getElementById("email").value;
         const phoneNumber=document.getElementById("phonenumber").value;
         const password=document.getElementById("password").value;
+        let encriptedPassword = crypt.encrypt(password);
+        console.log("my life",encriptedPassword);
         if (!usernameValid(username)){
             alert("Name should contain atleast 3 letters");
             return false;
@@ -38,7 +51,7 @@ if(name1.length===1){
             alert("phone number should contain 10 numbers")
             return false;
         }
-        addDeatails(username,email,phoneNumber,password);
+        addDeatails(username,email,phoneNumber,encriptedPassword);
         return true;
     }
 
@@ -47,7 +60,9 @@ if(name1.length===1){
         const existingusername=document.getElementById("existingusername").value;
         const existingPassword=document.getElementById("existingPassword").value;
         const userExist=userDetails.filter(obj=>obj.userEmail===existingusername);
-        if (userExist[0].userPassword === existingPassword){
+        const decriptPassword=crypt.decrypt(userExist[0].userPassword);
+        console.log("idec",decriptPassword)
+        if (decriptPassword === existingPassword){
             const user=userExist[0].userName;
             const idString=userExist[0].id;
             const userNameid="userName"+idString;
@@ -59,7 +74,7 @@ if(name1.length===1){
         // if(cookieExist===null){
             setCookie(userNameid,user,1);
         // } 
-            window.location.href = "http://127.0.0.1:5500/dashboard.html";
+        window.location.href = "http://127.0.0.1:5500/dashboard.html";
         // console.log(todate);
         // const tomorrow = 
         // console.log("hi",tomorrow.toString())
@@ -67,6 +82,7 @@ if(name1.length===1){
         
         }
         else{
+            alert("password is incorrect")
             console.log("incorrect")
         }
     }
