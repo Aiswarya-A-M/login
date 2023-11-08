@@ -13,11 +13,32 @@
     display:block;  
 }
 
-.sign{
+.signin{
     height: 60%;
     z-index: 2; 
     font-weight: bold;
     width: 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/logo.jpg");
+}
+
+/* .sign{
+    height: 90%;
+    z-index: 2; 
+    font-weight: bold;
+    width: 30%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url("assets/logo.jpg");
+} */
+.formdiv{
+    height: 90%;
+    z-index: 2; 
+    font-weight: bold;
+    width: 50%;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -63,18 +84,36 @@
     text-decoration: underline;
     color: blue;
     background-color: rgb(245, 236, 225);
-    width:15%;
+    width:50%;
     border-color: antiquewhite;
     margin-top: 5%;
-    text-align:left ;
+    text-align:center ;
+
 }
 .paragraph{
     margin-top: 2%;
-    width: 70%;
-    height:10%
+    width: 10%;
+    height:5%
 }
 #textdisplay{
     background-color: rgb(185, 121, 24);
     position: relative;
     z-index: 2;
 }
+/* @media only screen and (max-width: 760px){ */
+    /* .paragraph{
+        margin-top: 2%;
+        width: 40%;
+        height:10%;
+    }
+    .moveToSignupin{
+        text-decoration: underline;
+        color: blue;
+        background-color: rgb(245, 236, 225);
+        width:%;
+        border-color: antiquewhite;
+        margin-top: 5%;
+        text-align:left ;
+    
+}
+} */
