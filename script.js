@@ -77,7 +77,6 @@ if (userCookieDetail.length) {
     const userExist = userDetails.filter((obj) => obj.userEmail == loginEmail);
 
     if (userExist.length) {
-      console.log("hi")
       const decryptPassword = crypt.decrypt(userExist[0].userPassword);
       if (decryptPassword === loginPassword) {
         const user = userExist[0].userName;
