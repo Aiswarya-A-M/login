@@ -10,8 +10,8 @@ const crypt = {
   },
 };
 const cookieExist = document.cookie;
-const userCookieDeatail = cookieExist.split("=");
-if (userCookieDeatail.length === 1) {
+const userCookieDetail = cookieExist.split("=");
+if (userCookieDetail.length) {
   let userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
   function signupForm() {
     console.log("hi");
@@ -32,7 +32,7 @@ if (userCookieDeatail.length === 1) {
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phonenumber").value;
     const password = document.getElementById("password").value;
-    let encriptedPassword = crypt.encrypt(password);
+    let encryptedPassword = crypt.encrypt(password);
     if (!userNameValid(userName)) {
       document.getElementById("userName").style.borderColor = "red";
       alert(
@@ -61,7 +61,7 @@ if (userCookieDeatail.length === 1) {
       document.getElementById("phonenumber").style.borderColor = "white";
       return false;
     }
-    addDeatails(userName, email, phoneNumber, encriptedPassword);
+    addDetails(userName, email, phoneNumber, encryptedPassword);
     document.getElementById("signup").reset();
     console.log("form validated");
     return true;
@@ -79,9 +79,9 @@ if (userCookieDeatail.length === 1) {
     console.log(typeof(userExist));
     console.log("my grp",userExist.userEmail);
     console.log("my name",userExist);
-    const decriptPassword = crypt.decrypt(userExist[0].userPassword);
-    console.log("decript",decriptPassword);
-    if (decriptPassword === existingPassword) {
+    const decryptPassword = crypt.decrypt(userExist[0].userPassword);
+    console.log("decrypt",decryptPassword);
+    if (decryptPassword === existingPassword) {
       console.log("passwrd find")
       const user = userExist[0].userName;
       const idString = userExist[0].id;
@@ -96,38 +96,22 @@ if (userCookieDeatail.length === 1) {
   }
   function userNameValid(userName) {
     const userNamePattern = /^[a-zA-Z ]{3,30}$/;
-    if (userNamePattern.test(userName)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (userNamePattern.test(userName)) 
   }
   function emailValid(email) {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (emailPattern.test(email)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (emailPattern.test(email)) 
   }
   function passwordValid(password) {
-    if (
+    return (
       /[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(password) &&
       /[A-Z]/.test(password) &&
       /\d/.test(password)
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+    ) 
   }
   function phoneNumberValid(phoneNumber) {
     const numberPattern = /^\d{10}$/;
-    if (numberPattern.test(phoneNumber)) {
-      return true;
-    } else {
-      return false;
-    }
+    return (numberPattern.test(phoneNumber));
   }
   function emailNotExist(email) {
     const userExist = userDetails.findIndex((obj) => obj.userEmail === email);
@@ -157,14 +141,10 @@ if (userCookieDeatail.length === 1) {
     document.cookie = `${name}=${userNameid};${expiryDate}; path/`;
   }
 
-  function addDeatails(userName, email, phoneNumber, password) {
+  function addDetails(userName, email, phoneNumber, password) {
     console.log("to add")
     let id;
-    if (userDetails.length === 0) {
-      id = 1;
-    } else {
-      id = userDetails[userDetails.length - 1].id + 1;
-    }
+      id = userDetails.length + 1;
     newUser = {
       id: id,
       userName: userName,
