@@ -9,24 +9,22 @@
 #welcomeMsg {
   /* z-index: 2; */
   position: relative;
-  font-size: 100px;
+  font-size: 50px;
   width: 30%;
   height: 30%;
   height: 15%;
 }
 
 #hiMsg {
-  /* z-index: 2; */
   position: relative;
   text-align: center;
   background: none;
-  font-size: 50px;
+  font-size: 25px;
 }
 #userName {
-  /* z-index: 2; */
   position: relative;
   align-items: center;
-  font-size: 50px;
+  font-size: 25px;
   width: 50%;
   margin-left: 45%;
 }
