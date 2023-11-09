@@ -1,105 +1,40 @@
-.mainbody{
-    width: 100%;
-    height: 100%;
-    background-size: cover; 
-    background-position: center; 
-    justify-content: center;
-    align-items: center; 
-    position: absolute;
-    z-index: 1;
-    display: flex;
-}
-#welcomeMsg{
-    z-index: 2;
-    position: relative;
-    text-align: center;
-    align-items: center;
-    font-size: 200%;
-    width: 50%;
-    height: 50%;
-} 
-#welcomediv{
-    float: left;
-    z-index: 2;
-    position: relative;
-    width: 50%;
-    height: 15%;
-}
-#nameBox{
-    z-index: 2;
-    position: relative;
-    text-align: center;
-    background:none;
-}
-#nameOfUser{
-    z-index: 2;
-    position: relative; 
-    align-items:  center;
-    font-size: 150%;
-    width: 50%;
-    
-} 
-#divname{
-    z-index: 2;
-    position: relative;
-    text-align: right;
-    height: 50px;
-}
-#logout{
-    z-index: 2;
-    position: relative; 
-    font-size: 100%;
-    background-color: antiquewhite;
-    height: 100%;
-    width:25%
+.backgroundImg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
 }
 
-@media only screen and (min-width: 760px){
-    
-    #welcomeMsg{
-        z-index: 2;
-        position: relative;
-        text-align: center;
-        align-items: center;
-        font-size: 500%;
-        width: 100%;
-        height: 100%;
-    } 
-    #welcomediv{
-        float: left;
-        z-index: 2;
-        position: relative;
-        width: 50%;
-        height: 15%;
-    }
-    #nameBox{
-        z-index: 2;
-        position: relative;
-        text-align: center;
-        background: none;
-        width: 50%;
-    }
-    #nameOfUser{
-        z-index: 2;
-        position: relative; 
-        align-items:  center;
-        font-size: 250%;
-        
-    } 
-    #divname{
-        z-index: 2;
-        position: relative;
-        text-align: right;
-        height: 50px;
-    }
-    #logout{
-        z-index: 2;
-        position: relative; 
-        font-size: 100%;
-        background-color: antiquewhite;
-        height: 100%;
-        width:12.5%
-    }
-
+#welcomeMsg {
+  z-index: 2;
+  position: relative;
+  font-size: 200%;
+  width: 30%;
+  height: 30%;
+  height: 15%;
 }
 
+#greetingMsg {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  background: none;
+}
+#nameOfUser {
+  z-index: 2;
+  position: relative;
+  align-items: center;
+  font-size: 150%;
+  width: 50%;
+  margin-left: 45%;
+}
+
+#logoutButton {
+  position: relative;
+  font-size: 100%;
+  background-color: antiquewhite;
+  height: 50px;
+  width: 100px;
+  margin-left: 80%;
+}

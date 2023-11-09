@@ -1,29 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EarthRhythms</title>
-    <link rel="icon" type="image/x-icon" href="/assets/earthfavicon.png">
-    <link rel="stylesheet" href="dashboard.css" type="text/css">
-</head>
-<body>
-    <img src="assets/wallpaper.jpeg" class="mainbody">
-    
-    <div id="divname">
-        <button id="logout" onclick="deleteItem()">Log out</button>
-    </div>
-    <div id="welcomediv">
-        <P id="welcomeMsg">Welcome To EarthRhythms</P>
-    </div>
-    <div id="nameBox">
-        <h1>Hi</h1> &nbsp; <span id="nameOfUser"></span>
-        <!-- <input type="text"   readonly>
-       -->
-    </div>
-    
-    
-    
-</body> 
-<script src="dashboard.js"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/earthfavicon.png" />
+    <link rel="stylesheet" href="dashboard.css" type="text/css" />
+  </head>
+  <body>
+    <img src="assets/wallpaper.jpeg" class="backgroundImg" />
+    <button id="logoutButton" onclick="deleteCookie()">Log out</button>
+    <p id="welcomeMsg">Welcome To EarthRhythms</p>
+    <h3 id="greetingMsg">Hi</h3>
+    &nbsp; <span id="nameOfUser"></span>
+  </body>
+  <script src="dashboard.js"></script>
 </html>

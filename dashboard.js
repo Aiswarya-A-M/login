@@ -1,10 +1,20 @@
-const cookieExist=document.cookie;
-const cookieDeatails=cookieExist.split("=")
-if (cookieDeatails[1]===undefined){
-    window.location.href = "https://aiswarya-a-m.github.io/login/";
+const cookieExist = document.cookie;
+const cookieDeatails = cookieExist.split("=");
+console.log("hi");
+
+if (!cookieDeatails[1]) {
+  console.log("hloi");
+  // window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href="https://aiswarya-a-m.github.io/login/index.html";
 }
-document.querySelector("#nameOfUser").innerHTML=cookieDeatails[1];
-function deleteItem(){
-    document.cookie = cookieDeatails[0] +'=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;';
-    window.location.href = "https://aiswarya-a-m.github.io/login/";
+
+document.querySelector("#nameOfUser").innerHTML = cookieDeatails[1];
+
+function deleteCookie() {
+  console.log("inside delete");
+  document.cookie =
+    cookieDeatails[0] + "=; Path=/; Expires=Thu, 21 Feb 2001 00:00:01 GMT;";
+  // window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href="https://aiswarya-a-m.github.io/login/index.html";
+  console.log("end of delete");
 }
