@@ -85,8 +85,8 @@ if (userCookieDetail.length) {
       console.log("passwrd find")
       const user = userExist[0].userName;
       const idString = userExist[0].id;
-      const userNameid = "userName" + idString;
-      setCookie(userNameid, user, 1);
+      // const userNameid = "userName" + idString;
+      setCookie("userName", user, 1);
       document.getElementById("login").reset();
       console.log("move");
       window.location.href="/login/dashboard.html";
