@@ -74,10 +74,10 @@ if (userCookieDetail.length) {
     console.log("exitname",existingUserName)
     const existingPassword = document.getElementById("existingPassword").value;
     const userExist = userDetails.filter(
-      (obj) => obj.userEmail === existingUserName
+      (obj) => obj.userEmail == existingUserName
     );
     console.log(typeof(userExist));
-    console.log("my grp",userExist.userEmail);
+    console.log("my grp",userExist[0].userEmail);
     console.log("my name",userExist);
     const decryptPassword = crypt.decrypt(userExist[0].userPassword);
     console.log("decrypt",decryptPassword);
@@ -88,7 +88,7 @@ if (userCookieDetail.length) {
       const userNameid = "userName" + idString;
       setCookie(userNameid, user, 1);
       document.getElementById("login").reset();
-      console.log("move")
+      console.log("move");
       window.location.href="/login/dashboard.html";
     } else {
       alert("password is incorrect");
