@@ -20,11 +20,14 @@ if (userCookieDeatail.length === 1) {
     document.getElementById("signup").style.display = "block";
   }
   function signinForm() {
+    console.log("signup none")
     document.getElementById("signup").style.display = "none";
     document.getElementById("login").style.display = "block";
+    console.log("signin in")
   }
   function validateForm(event) {
     event.preventDefault();
+    console.log("at validate form");
     const userName = document.getElementById("userName").value;
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phonenumber").value;
@@ -60,27 +63,33 @@ if (userCookieDeatail.length === 1) {
     }
     addDeatails(userName, email, phoneNumber, encriptedPassword);
     document.getElementById("signup").reset();
+    console.log("form validated");
     return true;
   }
 
   function validateDetails(event) {
+    console.log("validating")
     event.preventDefault();
     const existingUserName = document.getElementById("existingUserName").value;
+    console.log("exitname",existingUserName)
     const existingPassword = document.getElementById("existingPassword").value;
     const userExist = userDetails.filter(
       (obj) => obj.userEmail === existingUserName
     );
     console.log(typeof(userExist));
-    console.log(userExist);
-    console.log(userExist[0])
+    console.log("my grp",userExist[0].userEmail);
+    console.log("my name",userExist[0]);
     const decriptPassword = crypt.decrypt(userExist[0].userPassword);
+    console.log("decript",decriptPassword);
     if (decriptPassword === existingPassword) {
+      console.log("passwrd find")
       const user = userExist[0].userName;
       const idString = userExist[0].id;
       const userNameid = "userName" + idString;
       setCookie(userNameid, user, 1);
       document.getElementById("login").reset();
-      window.location.href = "http://127.0.0.1:5500/dashboard.html";
+      console.log("move")
+       window.location.href = "http://127.0.0.1:5500/dashboard.html";
       // window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
     } else {
       alert("password is incorrect");
@@ -150,6 +159,7 @@ if (userCookieDeatail.length === 1) {
   }
 
   function addDeatails(userName, email, phoneNumber, password) {
+    console.log("to add")
     let id;
     if (userDetails.length === 0) {
       id = 1;
@@ -165,6 +175,7 @@ if (userCookieDeatail.length === 1) {
     };
     userDetails.push(newUser);
     localStorage.setItem("userDetails", JSON.stringify(userDetails));
+    console.log("added")
     signinForm();
   }
 } else {
