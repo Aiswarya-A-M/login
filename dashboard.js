@@ -1,6 +1,7 @@
-const cookieExist = document.cookie;
-const cookieDetails = cookieExist.split("=");
 console.log("hi");
+const cookieExist = document.cookie;
+console.log(cookieExist);
+const cookieDetails = cookieExist.split("=");
 console.log(cookieDetails);
 console.log(cookieDetails[1]);
 if (!cookieDetails[1]) {
