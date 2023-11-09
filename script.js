@@ -77,8 +77,8 @@ if (userCookieDeatail.length === 1) {
       (obj) => obj.userEmail === existingUserName
     );
     console.log(typeof(userExist));
-    console.log("my grp",userExist[0].userEmail);
-    console.log("my name",userExist[0]);
+    console.log("my grp",userExist.userEmail);
+    console.log("my name",userExist);
     const decriptPassword = crypt.decrypt(userExist[0].userPassword);
     console.log("decript",decriptPassword);
     if (decriptPassword === existingPassword) {
