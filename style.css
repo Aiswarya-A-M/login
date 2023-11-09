@@ -3,10 +3,10 @@
   padding: 0;
 }
 
-.backgroundImg {
+.backgroundImage {
   width: 100%;
   height: 100%;
-  background-image: url("assets/backgroundImg.png");
+  background-image: url("assets/backgroundImage.png");
   background-size: cover;
   position: absolute;
   justify-content: center;

@@ -14,7 +14,7 @@ const crypt = {
 };
 
 if (userCookieDetail.length) {
-  let userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
+  const userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
   function signupForm() {
     document.getElementById("login").style.display = "none";
     document.getElementById("signup").style.display = "block";
@@ -31,7 +31,7 @@ if (userCookieDetail.length) {
     const email = document.getElementById("email").value;
     const phoneNumber = document.getElementById("phonenumber").value;
     const password = document.getElementById("password").value;
-    let encryptedPassword = crypt.encrypt(password);
+    const encryptedPassword = crypt.encrypt(password);
 
     if (!userNameValid(userName)) {
       document.getElementById("userName").style.borderColor = "red";
@@ -132,17 +132,17 @@ if (userCookieDetail.length) {
     }
   }
 
-  function setCookie(name, userNameid, dayslive) {
+  function setCookie(name, userName, dayslive) {
     const todate = new Date();
     todate.setTime(todate.getTime() + dayslive * 24 * 60 * 60 * 1000);
-    let expiryDate = "expires=" + todate.toUTCString();
-    document.cookie = `${name}=${userNameid};${expiryDate}; path/`;
+    const expiryDate = "expires=" + todate.toUTCString();
+    document.cookie = `${name}=${userName};${expiryDate}; path/`;
   }
 
   function addDetails(userName, email, phoneNumber, password) {
-    let id = userDetails.length + 1;
+    const id = userDetails.length + 1;
     newUser = {
-      id: id,
+      id,
       userName: userName,
       userEmail: email,
       userNumber: phoneNumber,
