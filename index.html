@@ -10,17 +10,17 @@
   </head>
   <body>
     <div class="backgroundImg">
-      <form id="login" class="signinupForm" onsubmit="validateDetails(event)">
+      <form id="login" class="registerForm" onsubmit="validateDetails(event)">
         <h2>Sign-in</h2>
         <input
           type="text"
-          id="existingUserName"
+          id="loginEmail"
           class="inputFieldLogin"
           placeholder="Email"
           required
         /><br />
         <input
-          id="existingPassword"
+          id="loginPassword"
           class="inputFieldLogin"
           type="password"
           placeholder="Password"
@@ -44,7 +44,7 @@
 
       <form
         id="signup"
-        class="signinupForm"
+        class="registerForm"
         onsubmit="return validateForm(event)"
       >
         <h2>Sign-up</h2>

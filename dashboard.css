@@ -9,7 +9,7 @@
 #welcomeMsg {
   /* z-index: 2; */
   position: relative;
-  font-size: larger;
+  font-size: 100px;
   width: 30%;
   height: 30%;
   height: 15%;
@@ -20,12 +20,13 @@
   position: relative;
   text-align: center;
   background: none;
+  font-size: 50px;
 }
 #userName {
   /* z-index: 2; */
   position: relative;
   align-items: center;
-  font-size: larger;
+  font-size: 50px;
   width: 50%;
   margin-left: 45%;
 }
