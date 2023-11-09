@@ -89,8 +89,9 @@ if (userCookieDeatail.length === 1) {
       setCookie(userNameid, user, 1);
       document.getElementById("login").reset();
       console.log("move")
-       window.location.href = "http://127.0.0.1:5500/dashboard.html";
-      // window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
+      // window.location.href = "http://127.0.0.1:5500/dashboard.html";
+      //window.location.href = "https://www.youtube.com"
+      window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
     } else {
       alert("password is incorrect");
     }
@@ -179,6 +180,7 @@ if (userCookieDeatail.length === 1) {
     signinForm();
   }
 } else {
-  window.location.href = "http://127.0.0.1:5500/dashboard.html";
-  // window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
+  //window.location.href = "http://127.0.0.1:5500/dashboard.html";
+  //window.location.href="https://www.youtube.com/"
+  window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
 }
