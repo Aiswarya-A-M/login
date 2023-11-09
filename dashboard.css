@@ -14,13 +14,18 @@
   height: 30%;
 }
 
-.basicMessage {
+#basicMessage {
   background: none;
   font-size: 35px;
   color: aliceblue;
   width: 50%;
 }
 
+/* #userName {
+  font-size: 35px;
+  width: 50%;
+  color: aliceblue;
+} */
 
 #logoutButton {
   font-size: larger;

@@ -76,6 +76,10 @@ if (userCookieDetail.length) {
     const loginPassword = document.getElementById("loginPassword").value;
     const userExist = userDetails.filter((obj) => obj.userEmail == loginEmail);
     const decryptPassword = crypt.decrypt(userExist[0].userPassword);
+    
+    if(!userExist){
+      alert("user not exist");
+    }
 
     if (decryptPassword === loginPassword) {
       const user = userExist[0].userName;
