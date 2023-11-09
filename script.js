@@ -12,7 +12,7 @@ const crypt = {
     return decipher.toString(CryptoJS.enc.Utf8);
   },
 };
-console.log("length",userCookieDetail.length);
+
 if (userCookieDetail.length) {
   let userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
   function signupForm() {
