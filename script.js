@@ -70,6 +70,9 @@ if (userCookieDeatail.length === 1) {
     const userExist = userDetails.filter(
       (obj) => obj.userEmail === existingUserName
     );
+    console.log(typeof(userExist));
+    console.log(userExist);
+    console.log(userExist[0])
     const decriptPassword = crypt.decrypt(userExist[0].userPassword);
     if (decriptPassword === existingPassword) {
       const user = userExist[0].userName;
@@ -77,8 +80,8 @@ if (userCookieDeatail.length === 1) {
       const userNameid = "userName" + idString;
       setCookie(userNameid, user, 1);
       document.getElementById("login").reset();
-      // window.location.href = "http://127.0.0.1:5500/dashboard.html";
-      window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
+      window.location.href = "http://127.0.0.1:5500/dashboard.html";
+      // window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
     } else {
       alert("password is incorrect");
     }
@@ -165,6 +168,6 @@ if (userCookieDeatail.length === 1) {
     signinForm();
   }
 } else {
-  // window.location.href = "http://127.0.0.1:5500/dashboard.html";
-  window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
+  window.location.href = "http://127.0.0.1:5500/dashboard.html";
+  // window.location.href="https://aiswarya-a-m.github.io/login/dashboard.html";
 }
