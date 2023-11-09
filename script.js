@@ -75,19 +75,19 @@ if (userCookieDetail.length) {
     const loginEmail = document.getElementById("loginEmail").value;
     const loginPassword = document.getElementById("loginPassword").value;
     const userExist = userDetails.filter((obj) => obj.userEmail == loginEmail);
-    const decryptPassword = crypt.decrypt(userExist[0].userPassword);
-    
-    if(!userExist){
-      alert("user not exist");
-    }
 
-    if (decryptPassword === loginPassword) {
-      const user = userExist[0].userName;
-      setCookie("userName", user, 1);
-      document.getElementById("login").reset();
-      window.location.href = "/login/dashboard.html";
+    if (userExist.length) {
+      const decryptPassword = crypt.decrypt(userExist[0].userPassword);
+      if (decryptPassword === loginPassword) {
+        const user = userExist[0].userName;
+        setCookie("userName", user, 1);
+        document.getElementById("login").reset();
+        window.location.href = "/login/dashboard.html";
+      } else {
+        alert("password is incorrect");
+      }
     } else {
-      alert("password is incorrect");
+      alert("user not exist");
     }
   }
 
