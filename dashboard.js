@@ -1,5 +1,4 @@
-const cookieExist = document.cookie;
-const cookieDetails = cookieExist.split("=");
+const cookieDetails = document.cookie.split("=");
 document.querySelector("#userName").innerHTML = cookieDetails[1];
 
 if (!cookieDetails[1]) {

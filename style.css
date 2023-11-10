@@ -1,9 +1,6 @@
-.body {
+body {
   margin: 0;
   padding: 0;
-}
-
-.backgroundImage {
   width: 100%;
   height: 100%;
   background-image: url("assets/backgroundImage.png");
@@ -27,7 +24,7 @@
   position: fixed;
 }
 
-#signup {
+#signUp {
   display: none;
   padding-top: 0.5%;
 }
@@ -42,21 +39,12 @@
   margin-bottom: 2%;
 }
 
-.paragraph {
-  width: 5%;
-  height: 5%;
-  font-weight: small;
-}
 
-.moveToSignupin {
+.footerMessage {
   text-decoration: underline;
   color: blue;
-  background-color: rgb(245, 236, 225);
-  width: 62%;
-  border-color: antiquewhite;
-  margin-top: 2%;
-  height: 10%;
-  font-size: large;
+  font-size:17px;
+  cursor: pointer;
 }
 
 .inputFieldLogin {
@@ -66,7 +54,7 @@
   font-size: small;
 }
 
-.inputFieldSignup {
+.inputFieldSignUp {
   width: 60%;
   height: 7%;
 }

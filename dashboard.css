@@ -1,4 +1,4 @@
-.backgroundImage {
+body{
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -21,7 +21,7 @@
   width: 50%;
 }
 
-#logoutButton {
+#logOutButton {
   font-size: larger;
   background-color: antiquewhite;
   height: 50px;
