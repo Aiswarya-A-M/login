@@ -9,7 +9,7 @@ const crypt = {
     const decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
     return decipher.toString(CryptoJS.enc.Utf8);
   },
-}
+};
 
 if (userCookieDetail.length) {
   const userDetails = JSON.parse(localStorage.getItem("userDetails")) || [];
@@ -30,7 +30,7 @@ if (userCookieDetail.length) {
     const phoneNumber = document.getElementById("phoneNumber").value;
     const password = document.getElementById("password").value;
     const encryptedPassword = crypt.encrypt(password);
-    
+
     if (!userNameValid(userName)) {
       alert(
         "Name should contain at least 3 letters and numbers are not allowed"

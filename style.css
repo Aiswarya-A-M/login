@@ -39,11 +39,10 @@ body {
   margin-bottom: 2%;
 }
 
-
 .footerMessage {
   text-decoration: underline;
   color: blue;
-  font-size:17px;
+  font-size: 17px;
   cursor: pointer;
 }
 
