@@ -13,3 +13,6 @@ This is a simple page to create an account on EarthRhythms which is a blog writi
 
 <h2>How to Use</h2>
 To use this, simply open the index.html file in your web browser.
+![login1](https://github.com/Aiswarya-A-M/login/assets/148937898/bcf4246a-e19e-4f3a-b5e6-5079b5484e63)
+![login2](https://github.com/Aiswarya-A-M/login/assets/148937898/d1f1ca0a-4e81-47cd-a1ee-8fd32d29b08e)
+![login3](https://github.com/Aiswarya-A-M/login/assets/148937898/b442b80b-8f31-4995-b375-7cc4c0101e84)
